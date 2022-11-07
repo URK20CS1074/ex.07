@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <script src=
+            "https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+        </script>
+        <script>
+            $(document).ready(function(){
+                $('.d').keyup(function(){
+                    var a=parseInt($('#t1').val());
+                    var b=parseInt($('#t2').val());
+                    var c=parseInt($('#t3').val());
+                    var i = b/12/100;
+                    var emi=parseInt(a*i*(1+i)**c/[(1+i)**c - 1]);
+                    var s=parseInt(a*((1+i)/100*c));
+                    $('.res1').html("LoanAmount:"+a);
+                    $('.res2').html("TotalIntrest:"+s);
+                    $('.res3').html("EMI:"+emi);
+                    $('.res4').html("TotalAmount:"+parseInt(a+s));
+               
+
+                })   
+            })
+        </script>
+    </head>
+    <body>
+        <center>
+            <div class="box">
+        <h1>Loan EMI Calculator</h1><br><br>
+        <p style="color:blue;">Loan Amount(Rs):</p>
+        <input type='text' id='t1' class="d"></input><br><br><br>
+        <p style="color: blue;">Annual Intrest Rate(%):</p>
+        <input type='text' id='t2' class="d"><br><br><br>
+        </input>
+        <p style="color:blue;">Tenure(Years):</p>
+        <input type='text' id='t3' class="d"></input><br><br>
+        
+        <div class='res1'></div><br>
+        <div class='res2'></div><br>
+        <div class='res3'></div><br>
+        <div class='res4'></div><br>
+        </center></div>
+
+    </body>
+</html>
